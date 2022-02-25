@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Skill Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" href="/assets/favicon.png" type="image/x-icon">
+    <script src="https://kit.fontawesome.com/c8e4d183c2.js" crossorigin="anonymous"></script>
+    <script src="index.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_K1PoFs8pB2YVWStDxrUls");
+        })();
+    </script>
+</head>
+
+<body>
+    <section id="project__page">
+        <nav>
+            <figure>
+                <a href="index.html"><img id="personal-logo" src="./assets/logo.svg" alt="Site logo"></a>
+            </figure>
+            <ul class="nav__link--list">
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                  nav__link--anchor
+                  link__hover-effect
+                  link__hover-effect--black
+                ">About</a>
+                </li>
+                <li class="nav__link">
+                    <a href="index.html#projects" class="
+                  nav__link--anchor
+                  link__hover-effect
+                  link__hover-effect--black
+                ">Projects</a>
+                </li>
+                <li class="nav__link" onclick="toggleModal()">
+                    <a href="#" class="
+                  nav__link--anchor
+                  link__hover-effect
+                  link__hover-effect--black
+                ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                  nav__link--anchor
+                  link__hover-effect
+                  link__hover-effect--black
+                "><i class="fas fa-adjust"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <a href="#">
+            <button class="mail__btn click" onclick="toggleModal()">
+                <i class="fas fa-envelope"></i>
+            </button>
+        </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me.</h3>
+                <h4 class="modal__sub-title modal__sub-title--about">I'm an SFU Interactive Arts & Technology student
+                </h4>
+                <p class="modal__para">
+                    with a wide variety of interests in visual media and interactivity. Some of my interests include
+                    creative
+                    coding, 3D modelling and rendering, and a general passion for music!
+                </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
+                            alt="">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png" alt="">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png" alt="">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img"
+                            src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png" alt="">
+                        <span class="language__name">React</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/Processing_2021_logo.svg" alt="">
+                        <span class="language__name">Processing</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img class="modal__language--img" src="./assets/Arduino_Logo.png" alt="">
+                        <span class="language__name">Arduino</span>
+                    </figure>
+                </div>
+                <a href="skill-gallery.html" class="modal__para--link green"><b>Check out a gallery of my
+                        skills!</b></a>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">
+                    Let's have a chat!
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">
+                    I'm currently open to new opportunities.
+                </h3>
+                <h3 class="modal__sub-title modal__sub-title--contact">Feel free to send me an email here:</h3>
+                <h3 class="modal__sub-title modal__sub-title--link"><a href="mailto:micolelai@gmail.com"
+                        class="green">micolelai@gmail.com</a></h3>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div>
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message! Looking forward to speaking to you soon.
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="project__content">
+                    <h1 class="project__title green">Skill Gallery</h1>
+                    <h3 class="project__sub-title gallery__space">Blender</h3>
+                    <div class="image__grid">
+                        <ul class="gallery__grid">
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/abstractNode.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/curlVolume.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/futuristicCube.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/cartridgeRender.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/baoChopstick.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/baoFinal.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/baoTogether.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/kaijuQueen.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/noiseDisplace.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/noiseDisplace1.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/blender/noiseDisplace2.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="project__sub-title gallery__space">Maya</h3>
+                    <div class="image__grid">
+                        <ul class="gallery__grid">
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/maya/mayaModeling.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/maya/mayaModeling2.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/maya/compactCam.png" alt="" class="gallery__img">
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="project__sub-title gallery__space">Processing</h3>
+                    <div class="image__grid">
+                        <ul class="gallery__grid">
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/processing/gradient_4.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/processing/out1.png" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/processing/out_2.png" alt="" class="gallery__img">
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="project__sub-title gallery__space">Touch Designer</h3>
+                    <div class="image__grid">
+                        <ul class="gallery__grid">
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/touchdesigner/watercolor_13.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/touchdesigner/watercolor_18.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/touchdesigner/watercolor_20.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/touchdesigner/watercolor_5.png" alt=""
+                                    class="gallery__img">
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="project__sub-title gallery__space">Photoshop</h3>
+                    <div class="image__grid">
+                        <ul class="gallery__grid">
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photoshop/MicoleL_Fun1_Edited.jpg" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photoshop/zeppDesign.png" alt="" class="gallery__img">
+                            </li>
+                        </ul>
+                    </div>
+                    <h3 class="project__sub-title gallery__space">Photography</h3>
+                    <div class="image__grid">
+                        <ul class="gallery__grid">
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/drink.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/meeting.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography//P3040862.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3041011.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3070228.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3070420.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3070630.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3070960.jpg" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3071132_2.jpg" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3160357.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3171052.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3171054.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3171055.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3181263.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3181742.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3182093.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3182107.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3182262.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3182763.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3192904.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3193182.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3193826.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3204489.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3204864.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3225929.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3236581.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3236651.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3236661.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3247225.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3247409.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3247502.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3247506.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3257981.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3258047.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/P3258050.JPG" alt="" class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/Untitled_HDR-1.jpg" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/Untitled_HDR-10.jpg" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/Untitled_HDR-4.jpg" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/Untitled_HDR-5.jpg" alt=""
+                                    class="gallery__img">
+                            </li>
+                            <li class="gallery_item">
+                                <img src="./assets/skill-gallery/photography/value-MicoleL.jpg" alt=""
+                                    class="gallery__img">
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <div class="container">
+            <div class="row footer__row">
+                <a href="#" class="footer__anchor">
+                    <figure class="footer__logo">
+                        <img src="./assets/logo.svg" class="footer__logo--img" alt="">
+                    </figure>
+                    <span class="footer__logo--popper">
+                        Top
+                        <i class="fas fa-arrow-up"></i>
+                    </span>
+                </a>
+                <div class="footer__social--list">
+                    <a href="https://www.linkedin.com/in/micolelai/" target="_blank" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+                        LinkedIn
+                    </a>
+                    <a href="https://github.com/mwstl" target="_blank" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+                        GitHub
+                    </a>
+                    <a href="#" onclick="toggleModal()" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+                        Contact
+                    </a>
+                    <a href="./assets/Micole_Lai_Resume.pdf" target="_blank" class="
+              footer__social--link
+              link__hover-effect
+              link__hover-effect--white
+            ">
+                        Resume
+                    </a>
+                </div>
+                <div class="footer__copyright">Copyright &copy; 2021 Micole Lai</div>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
