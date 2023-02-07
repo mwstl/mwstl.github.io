@@ -1,0 +1,1129 @@
+@import 'variables.sass'
+@import 'mixins.sass'
+@import 'grid-template.sass'
+@import 'https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800'
+
+* 
+    box-sizing: border-box
+    margin: 0
+    padding: 0
+    letter-spacing: 0.15em
+
+html 
+    scroll-behavior: smooth
+    background-color: $bg
+    font-family: $sans-serif
+    font-weight: $light
+    color: $main
+    position: relative
+
+    @include for-size(desktop, up)
+        overflow-x: hidden
+
+html, body
+    width: 100%
+    min-height: 100%
+    // overflow: hidden
+
+.content-wrapper
+    // overscroll-behavior: contain
+    @include for-size(phone)
+        width: 100vw
+        overflow-x: hidden
+
+    @include for-size(desktop, up)
+        // overflow: hidden
+
+.slider
+    // @include for-size(desktop, up)
+    //     display: flex
+    @include for-size(desktop, down)
+        display: flex
+        flex-direction: column
+        gap: 5rem
+
+.sticky-height
+    @include for-size(desktop, down)
+        height: fit-content
+        position: relative
+    @include for-size(desktop, up)
+        height: 300vh
+
+.sticky-scroll
+    @include for-size(desktop, down)
+        height: fit-content
+    @include for-size(desktop, up)
+        height: 100vh
+        width: 100%
+        position: sticky
+        top: 0
+        overflow: hidden
+// .horizontal-scroll
+
+
+
+/*  TYPOGRAPHY  */
+    
+h1, .h1
+    // @include uppercase(4rem, 1.1em)
+    @include text-shadow
+    width: fit-content
+
+    @include for-size(phone)
+        @include uppercase(2.75rem, 1.1em)
+        margin-left: 1rem
+    @include for-size(tablet-lg)
+        @media screen and (min-width: 768px)
+            @include uppercase(3.5rem, 1.1em)
+    @include for-size(tablet-lg, up)
+        @media screen and (min-width: 1024px)
+            @include uppercase(3.5rem, 1.1em)
+
+h2, .h2
+    @include for-size(tablet-lg)
+        @include uppercase(2.25rem, 1.1em, 300)
+    @include for-size(tablet-lg, up)
+            @include uppercase(3.5rem, 1.1em, 300)
+
+h3, .h3
+    @include uppercase(1.5rem, 1.1em, 400)
+
+p, .p
+
+    @include for-size(phone)
+        font: 
+            weight: 300
+            size: 1.1rem
+        
+    @include for-size(tablet-lg)
+        @media screen and (min-width: 768px)
+            font: 
+                weight: 300
+                size: 1.5rem
+            max-width: 28em
+
+    @include for-size(tablet-lg, up)            
+        font-size: 1.25rem
+        max-width: 30em
+
+a
+    text-decoration: none
+    color: $main
+
+em, .em 
+    font: 
+        weight: 500
+        size: 1.1rem
+        color: $acc
+        
+.bg-text
+    &-main
+        color: rgba($main, 0.25)
+        @include for-size(phone, up)
+            @include uppercase(3rem, 1.25em, 100)
+        @include for-size(phone)
+            @include uppercase(2rem, 1.25em, 100)
+        
+
+        &.sg
+            @include align-vertical($transform: translate(0, -50%) rotate(180deg))
+            position: absolute
+            writing-mode: vertical-lr
+            transform-origin: center center
+            text-align: center
+            left: calc(($med / -2) - 0.5rem)
+            white-space: nowrap
+
+    &-detail
+        @include uppercase(1.25rem, 1.1em, 300)
+        color: $acc-dark
+
+ul, ol, li
+    list-style-type: none
+
+li
+    line-height: 1.5em
+    list-style-position: inside
+
+.bullet-list
+    li
+        padding-left: 1rem
+        list-style-type: disc
+        font-size: 1.25rem
+
+.num-list
+    li
+        padding-left: 1rem
+        list-style-type: decimal
+        font-size: 1.25rem
+
+.page-title 
+    // position: absolute
+    // top: 0
+    // left: 0
+    // line-height: $smed
+    z-index: 1
+
+    // @include for-size(phone)
+    //     margin-top: $sm
+
+    // @include for-size(phone, up)
+    //     margin-left: $med
+
+img
+    max-width: 100%
+    max-height: 100%
+
+
+/*  LINKS   */
+
+.cta-link
+    @include uppercase($size: 2rem)
+    position: relative
+    display: block
+    width: fit-content
+    transition: color 200ms ease
+
+    &:before 
+        @include align-vertical
+        content: ""
+        position: absolute
+        right: -1em
+        width: 0.75em
+        height: 0.75em
+        background-color: $main
+        clip-path: polygon(0 0, 0% 20%, 65% 20%, 5% 80%, 20% 95%, 80% 35%, 80% 100%, 100% 100%, 100% 0)
+    
+    &:hover, &:focus, &:active
+        color: $acc-light
+
+        &:before
+            background-color: $acc-light
+
+.cta-block
+    font:
+        size: 2rem
+        weight: 500
+    padding: 2rem
+    width: fit-content
+    border: $thin-border
+    transition: background-color 200ms ease
+
+    &:hover, &:focus, &:active
+        background-color: rgba($main, 0.1)
+
+.text-link
+    position: relative
+    width: fit-content
+    // padding-left: 0.25em
+    cursor: pointer
+    text-decoration: none
+    color: $main
+
+    @include for-size(phone)
+        @include uppercase($size: 1.5rem, $weight: 200)
+    @include for-size(tablet-lg)
+        @media screen and (min-width: 768px)
+            @include uppercase($size: 2rem, $weight: 200)
+    @include for-size(desktop, up)
+        @include uppercase($size: 2.5rem, $weight: 200)
+
+
+    &:before
+        @include absolute-bl($left: -.25em)
+        content: ""
+        height: 0.5em
+        width: calc(100% + 0.25em)
+        background: linear-gradient(270deg, $acc 0%, rgba($acc, 0.5) 100%)
+        transform-origin: left center
+        transform: scaleX(0)
+        z-index: -1
+        transition: transform 250ms ease, opacity 250ms ease
+
+    &:hover::before, &:focus::before, &:active::before
+        transform: scaleX(1)
+
+
+/*  INPUTS  */
+
+input
+    appearance: none
+    border-radius: 0
+    position: relative
+
+    &[type="text"]
+        font-size: 1rem
+        background: none
+        outline: none
+        border: none
+        border-bottom: $thin-border
+        padding: 0.5em 0.75em
+        color: $main
+
+.input-span
+    position: relative
+    width: fit-content
+
+    &::before
+        @include absolute-bl($bottom: -0.5em)
+        content: ""
+        height: 1em
+        border-left: $thin-border
+
+.radio, .check
+    &-input
+        display: flex
+        flex-direction: column
+        width: fit-content
+    
+    &-btn
+        display: flex
+        align-items: center
+        gap: 0.5em
+        margin: 0.25em 0
+
+        &:focus-within
+            color: var($acc)
+
+input[type="radio"], input[type="checkbox"]
+    @include grid-center
+    width: 1.1em
+    height: 1.1em
+    border: 1px solid $mid-grey
+    transition: transform 150ms ease
+
+    &:checked
+        border-color: $acc
+
+        &:before
+            transform: scale(1)
+
+    &:before
+        content: ""
+        transform: scale(0)
+        transition: transform 150ms ease
+        box-shadow: inset 1em 1em $acc
+
+    &:focus
+        outline: max(1px, 0.15em) solid var(--mid-grey)
+        outline-offset: max(1px, 0.15em)
+
+input[type="radio"]
+    border-radius: 50%
+
+    &:before
+        width: 0.5em
+        height: 0.5em
+        border-radius: 50%
+
+input[type="checkbox"]
+    &:before
+        width: 1em
+        height: 1em
+        transform-origin: bottom-left
+        clip-path: polygon(10% 0%, 0% 10%, 40% 50%, 0% 90%, 10% 100%, 50% 60%, 90% 100%, 100% 90%, 60% 50%, 100% 10%,90% 0%, 50% 40%)
+
+/*  NAVIGATION  */
+
+.nav-sticky
+    @include sticky-nav
+    @include drop-shadow
+    @include flex
+    z-index: 3
+
+    @include for-size(phone)
+        padding: .5rem 1rem
+
+    @include for-size(tablet-lg)
+        @media screen and (min-width: 768px)
+            padding: 1rem 
+        width: 100vw
+        flex-direction: row-reverse
+        justify-content: space-between
+
+    @include for-size(desktop, up)
+        padding: 1.5rem
+        flex-direction: column
+        height: 100vh
+        justify-content: space-between
+        backdrop-filter: blur(2px)
+
+#nav-toggle 
+    position: relative
+    width: $sm
+    height: $sm
+    cursor: pointer
+    background: none
+    border: none
+
+    &:hover span, &:hover span:before, &:hover span:after, &:focus span, &:focus span:before, &:focus span:after, &:active span, &:active span:before, &:active span:after
+        background-color: $acc
+
+    .menu-toggle 
+        position: relative
+        @include menu-toggle-styling($top: 50%, $transform: scaleX(calc(1.75/3)), $t-orig: center)
+
+        #{$body-parent}[data-nav="true"] &
+            // @include menu-toggle-styling($left: -100%)
+            @include for-size(phone)
+                transform: scaleX(1) rotate(-45deg)
+
+        &:before 
+            @include menu-toggle-styling($top: calc($sm/-3), $transform: scaleX(calc(4.5/3)), $t-orig: right)
+
+            #{$body-parent}[data-nav="true"] &
+                // @include menu-toggle-styling($transform: rotateZ(-45deg) scaleX(0.75) translate(-1%, 0))
+                @include for-size(phone)
+                    transform: rotate(90deg) translate(35%, calc($sm / 2)) scaleX(.5)
+
+        &:after 
+            @include menu-toggle-styling($top: calc($sm/3), $transform: scaleX(calc(1/2)), $t-orig: right)
+
+            #{$body-parent}[data-nav="true"] &
+                // @include menu-toggle-styling($transform: rotateZ(45deg) scaleX(0.75) translate(-1%, 0))
+                @include for-size(phone)
+                    transform: rotate(90deg) translate(15%, calc($sm / 2)) scaleX(.5)
+
+.menu-logo-wrap
+    @include drop-shadow
+    // backdrop-filter: blur(10px)
+    width: $sm
+    height: $sm
+    text-align: center
+
+.menu-logo
+    width: 100%
+    line-height: $sm
+    // text-align: center
+    text-decoration: none
+    color: $main
+    transition: color 200ms ease
+    z-index: 1
+
+    @include for-size(tablet-lg)
+        font: 
+            size: 1.5rem
+            weight: 200
+
+    @include for-size(tablet-lg, up)
+        font-size: 2rem
+
+
+    &:hover
+        color: $acc
+        transition: color 200ms ease
+
+nav
+    @include grid-center
+    @include sticky-nav
+    height: 100vh
+    background-color: $bg
+    z-index: 2
+    transform: translateX(100%)
+    transition: transform 500ms ease
+
+    @include for-size(tablet-lg)
+        width: 100vw
+    @include for-size(desktop, up)
+        width: 60vw
+        border-left: $thick-border
+
+    #{$body-parent}[data-nav="true"] &        
+        transform: translateX(0)
+        transition: transform 500ms ease
+
+.main-nav-links 
+    height: 45%
+    
+    ul
+        @include flex($jc: space-between)
+        flex-direction: column
+        height: 100%
+    
+    .text-link
+        font-weight: 400
+
+
+.other-nav-links
+    position: absolute
+    bottom: 0
+    width: 100%
+    border-top: $thin-border
+    @include for-size(desktop, up)
+        padding: 0 2rem 
+
+
+    ul
+        @include flex($jc: space-around)
+        padding: 1rem
+        
+        li .text-link
+            @include for-size(phone)
+                font-size: 1rem
+            @include for-size(tablet-lg)
+                @media screen and (min-width: 768px)
+                    font-size: 1.5rem
+                    line-height: 1.5em
+            @include for-size(desktop, up)
+                font-size: 1.5rem
+
+/*  SECTIONS  */
+
+main section
+    // @include grid-center
+
+    @include for-size(tablet-lg, down)
+        grid-template: 1fr / 1fr
+        & + section
+            margin-top: 10rem
+
+
+/*  HOMEPAGE  */
+#hero, #about, #projects
+    @include for-size(tablet-lg, down)
+        @include grid-center
+    @include for-size(tablet-lg, up)
+        @include flex
+        width: fit-content
+        margin: 0 5rem 
+        gap: 3rem
+
+#hero
+    min-height: 100vh
+
+    @include for-size(desktop, up)
+        width: 100vw
+        max-height: 100vh
+        justify-content: space-around
+        // margin: 0
+
+    h1
+        position: relative
+        width: fit-content
+        
+        span
+            position: absolute
+            top: -1.5em
+            font-size: .5em
+            z-index: -1
+
+            @include for-size(tablet-lg)
+                @include align-horizontal
+
+.hero-img-wrapper
+    position: relative
+    width: min(90vw, 90vh)
+    height: min(90vw, 90vh)
+
+.hero-canvas
+    position: relative
+    width: 100%
+    height: 100%
+
+#about h2, #projects h2  
+    // @include for-size(tablet-lg, up)
+    //     position: absolute
+    //     top: 0
+    //     left: 0
+    //     margin-top: 2em
+
+#about
+    position: relative
+    gap: 5rem
+
+    @include for-size(desktop, up)
+        flex-direction: column  
+
+    .about-info
+        width: 30em
+        @include for-size(tablet, down)
+            max-width: 90vw
+        p
+            padding: 1rem 0
+            width: 100%
+
+
+#projects
+    @include for-size(desktop, up)
+        @include align-vertical
+    position: relative
+
+.project
+    &-list-wrapper
+        @include flex($gap: 5rem)
+        width: 100vw
+        margin: 5rem 0
+
+        @include for-size(phone)
+            padding: 0 3rem
+            flex-direction: column
+        @include for-size(tablet-lg, down)
+            @media screen and (min-width: 768px)
+                padding: 0 6rem
+                flex-direction: column
+        @include for-size(desktop, up)
+            gap: 15rem 
+            width: 100%
+        
+        
+    &-item
+        position: relative
+        
+        @include for-size(tablet-lg)
+            width: 100%
+            height: 50vh
+
+        @include for-size(desktop, up)
+            width: min(50vw, 50vh)
+            height: min(50vw, 50vh)
+
+        &:before
+            content: ""
+            position: absolute
+            clip-path: polygon(0 0, 0% 20%, 65% 20%, 5% 80%, 20% 95%, 80% 35%, 80% 100%, 100% 100%, 100% 0)
+            background-color: rgba($main, 1)
+            transition: background-color 350ms ease
+            top: 3rem
+            right: -2rem
+            z-index: 1
+
+            @include for-size(tablet)
+                width: 1.5em
+                height: 1.5em
+                top: 3rem
+                right: -2rem
+
+            @include for-size(tablet-lg, up)
+                @media screen and (min-width: 768px)
+                    width: 2.5em
+                    height: 2.5em
+                
+
+            // @include for-size(phone, up)
+            //     right: calc($arrow-size / -2)
+            //     bottom: calc($arrow-size / 2 - .1em)
+
+        &-image
+            height: 100%
+            width: 100%
+            z-index: -1
+
+            @include for-size(phone)                
+                position: absolute
+                bottom: 0
+            
+            img
+                height: 100%
+                width: 100%
+                object-fit: cover
+                filter: grayscale(5%) brightness(65%) blur(1px)
+                transition: transform 350ms ease, opacity 350ms ease, filter 350ms ease
+
+        &-details
+            @include drop-shadow
+            position: absolute
+            left: -1.5rem
+            top: 3rem
+            z-index: 1
+
+            &-name
+                @include for-size(tablet-lg, down)
+                    @include uppercase($size: 2rem, $weight: 500)
+                @include for-size(tablet-lg, up)
+                    @media screen and (min-width: 768px)
+                        @include uppercase($size: 3rem, $weight: 500)
+
+            &-icon
+                margin-top: .5rem
+
+                img
+                    @include for-size(tablet-lg)
+                        @media screen and (min-width: 768px)
+                            // width: 2.5em
+                            height: 2.5em
+                
+        &-category
+            @include uppercase($size: .75rem)
+            position: absolute
+            writing-mode: vertical-lr
+            right: -2em
+            bottom: 0
+
+            p
+                color: $mid-grey
+                white-space: nowrap
+                
+        &:hover 
+            cursor: pointer
+            
+            & .project-item-image img
+                filter: brightness(75%)
+                transition: transform 350ms ease, opacity 350ms ease, filter 350ms ease
+                transform: scale(1.05)
+
+/*  FOOTER  */
+
+footer
+    margin-top: 3rem
+    position: relative
+    border-top: $thick-border
+
+.footer
+    position: relative
+    
+    
+    &-wrapper
+        @include flex($jc: space-around)
+        height: 85vh
+        flex-direction: column
+
+        @include for-size(tablet-lg)
+            padding: 5rem 0
+
+    &-links-main
+        @include flex($jc: space-around)
+        flex-direction: column
+        height: 65%
+
+    &-links-contact
+        p
+            width: 100%
+            text-align: center
+            margin: 1rem 0
+
+        & .icons
+            @include flex($gap: 2rem)
+
+            @include for-size(phone, up)
+                @include flex($gap: 5rem)
+                height: 5em
+
+.copyright
+    @include for-size(phone)
+        @include uppercase($size: .75rem, $weight: 300, $height: 2em)
+    @include for-size(tablet-lg)
+        @media screen and (min-width: 768px)
+            @include uppercase($size: 1rem, $weight: 300, $height: 2em)
+    @include align-horizontal
+    position: absolute
+    white-space: nowrap
+    color: rgba($mid-grey, .5)
+    width: 100%
+    border-top: $thin-border-05
+    text-align: center
+    
+
+/*  GALLERY  */
+
+#gallery
+    display: grid
+
+    @include for-size(desktop, up)
+        height: 100vh
+        grid-template-rows: repeat(3, minmax($lg, 1fr))
+        grid-auto-columns: calc($x-lg)
+        grid-auto-flow: column dense
+        grid-row-gap: 1rem
+        grid-column-gap: 1rem
+        place-items: center
+        width: minmax(100vw, min-content)
+    
+    @include for-size(tablet-lg)
+        margin-top: calc($sm + 1rem)
+        max-width: 100vw
+        grid-template-columns: repeat(2, 1fr)
+        grid-auto-rows: calc(100vw / 2)
+        grid-auto-flow: dense
+        place-items: center
+
+    div
+        overflow: hidden
+        width: 100%
+        height: 100%
+
+        img
+            width: 100%
+            height: 100%
+            object-fit: cover
+            filter: grayscale(15%) brightness(85%) opacity(75%)
+            transition: filter 200ms ease, transform 200ms ease
+
+            &:hover, &:focus, &:active
+                filter: none
+                transition: filter 200ms ease, transform 200ms ease
+
+        &.focus-img img
+            filter: grayscale(5%) brightness(90%) opacity(90%)
+            transition: filter 200ms ease, transform 200ms ease
+
+            &:hover, &:focus, &:active
+                filter: none
+                transition: filter 200ms ease, transform 200ms ease       
+
+.lightbox
+    display: none
+    position: fixed
+    top: 0
+    height: 100vh
+    width: 100%
+    z-index: 1
+    backdrop-filter: blur(2px) brightness(30%)
+
+    img
+        @include align-vertical
+        position: absolute
+
+/*  STYLEGUIDE  */
+
+.slider.styleguide
+    margin-top: $sm
+    width: 100%
+    text-align: center
+
+.styleguide section 
+    margin: 5rem 0
+
+    h2
+        font-size: 1.75rem
+        position: relative
+
+        &:before
+            content: ""
+            position: absolute
+            bottom: -.25em
+            left: 0
+            width: 65%
+            height: 2px
+            background-color: $dark-grey
+
+
+.color-palette
+    @include for-size(tablet-lg, down)
+        @include flex
+        flex-direction: column
+        width: 100%
+        gap: 1rem
+        margin: 2rem 0
+        padding: 0 2rem
+
+    @include for-size(desktop, up)
+        padding: 2rem 10rem 
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        grid-template-rows: repeat(2, 1fr)
+        gap: $sm
+
+.color
+    white-space: nowrap
+    padding: 1.1em
+    width: 100%
+    text-align: center
+
+    .color-type
+        font:
+            size: 1.5rem
+            weight: 500
+        padding-top: 0
+
+    &:nth-child(1)
+        background-color: $main
+        color: $bg
+    &:nth-child(2)
+        background-color: $mid-grey
+        color: $bg
+    &:nth-child(3)
+        background-color: $bg
+        color: $main
+        border: $thin-border
+    &:nth-child(4)
+        background-color: $acc-light
+        color: $bg
+    &:nth-child(5)
+        background-color: $acc
+        color: $main
+    &:nth-child(6)
+        background-color: $acc-dark
+        color: $main
+
+.code-section
+    text-align: left
+
+    @include for-size(desktop, up)
+        width: calc($x-lg * 1.75)
+        position: relative
+
+    @include for-size(tablet-lg, down)
+        margin-top: 5rem
+        padding: 0 1rem
+
+    @include for-size(desktop, up)
+        @include align-horizontal
+        margin: 5rem 0
+        
+.toggle-code
+    $t: &
+    position: relative
+    border-bottom: 2px solid rgba($mid-grey, 0.5)
+
+    & + .toggle-code
+        margin-top: 1rem
+
+    .code
+        display: block
+        visibility: hidden
+        opacity: 0
+        padding: 0
+        margin: 0
+        height: 0
+        transform-origin: center center
+        transform: scale(0, 0)
+        transition: visibility 300ms ease, opacity 300ms ease, padding 350ms ease, margin 350ms ease, height 350ms ease, transform 500ms ease
+
+    &.view-code 
+        .code
+            visibility: visible
+            opacity: 1
+            height: fit-content
+            transform: scale(1, 1)
+            transition: visibility 0 ease, opacity 0 ease, padding 0 ease, margin 0 ease, height 0 ease, transform 0 ease
+
+            @include for-size(phone, up)
+                padding: 1rem 3rem
+                margin: 1rem 3rem
+
+            @include for-size(phone)
+                padding: 0 1rem
+
+            &:before
+                display: block
+        
+        & .toggle-title:after
+            content: "-"
+
+    .toggle-title
+        position: relative
+        display: block
+        width: 100%
+        cursor: pointer
+        margin: 1rem 0
+        align-self: baseline
+
+        &:after
+            @include absolute-tr($top: 50%)
+            content: "+"
+            width: 2rem
+            font-size: 3rem
+            line-height: 3rem
+            margin-top: -1.5rem
+            font-weight: 100
+            vertical-align: text-bottom
+            color: rgba($mid-grey, 0.5)    
+
+.p.toggle-title
+    max-width: none
+
+.cite-list
+    @include grid-center
+    margin: 3rem 15%
+    gap: 1rem
+    text-align: left
+    p
+        max-width: none
+        font-size: .75rem
+
+// .code
+//     @include drop-shadow-light
+//     position: relative
+//     background-color: $acc-dark
+
+//     &:before
+//         @include align-vertical($transform: translate(0, -50%) rotate(180deg))
+//         content: "Sample Code"
+//         position: absolute
+//         writing-mode: vertical-lr
+//         transform-origin: center center
+//         left: -1.5rem
+//         color: $mid-grey
+//         text-transform: uppercase
+//         font-weight: 200
+//         white-space: nowrap
+
+.toggle-title .cta-block
+    @include for-size(phone)
+        width: 85%
+        text-align: center
+
+/*  PROJECT PAGE  */
+
+.slider.project
+    @include for-size(tablet-lg, down)
+        margin-top: calc($sm + 1rem)
+    width: 100%
+    section
+        margin-top: 5rem
+
+.project .page-title
+    @include for-size(desktop, up)
+        margin: 3rem 3rem
+        position: absolute
+
+#context
+    margin-top: 0
+
+.project-intro
+    height: 100vh
+    position: relative
+
+.project-info
+    @include text-shadow
+    @include grid($jc: start)
+    
+    @include for-size(tablet-lg)
+        margin-top: 3rem 0
+        padding: 0 3rem
+        height: 60%
+
+    @include for-size(desktop, up)
+        // width: 100vw        
+        height: 60%
+        @include align-vertical
+        position: relative
+        margin-left: 3rem
+
+    div h6
+        @include for-size(tablet-lg, down)
+            @include uppercase($size: 1.5rem, $height: 1.5em)
+        @include for-size(desktop, up)
+            @include uppercase($size: 2rem, $height: 1.5em)
+
+.fade-img
+    background-repeat: no-repeat
+    background-size: cover
+    background-position: center
+    box-shadow: 0 0 50% 50% $bg inset
+    height: 100%
+    width: 100%
+    z-index: -1
+    position: absolute
+    // top: -50%
+    left: 0
+
+    @include for-size(tablet-lg, down)
+        top: -$med
+    @include for-size(desktop, up)
+        top: 0
+
+    
+#fighter-jet .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 25%) 40%, rgba($bg, 25%) 60%, $bg 100%), url('../img/fighter-jet/fighter-jet.jpg')
+#generative-art .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 30%) 40%, rgba($bg, 30%) 60%, $bg 100%), url('../img/generative-art/generative_art.jpg')
+#embergen .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 0) 40%, rgba($bg, 0) 60%, $bg 100%), url('../img/simulation/embergen.jpg')
+#monaverse .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 40%) 40%, rgba($bg, 40%) 60%, $bg 100%), url('../img/monaverse/monaverse_thumbnail.jpg')
+#shield-shader .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 30%) 40%, rgba($bg, 30%) 60%, $bg 100%), url('../img/shader/shield-shader-collision.gif')
+#textbox-shader .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 30%) 40%, rgba($bg, 30%) 60%, $bg 100%), url('../img/shader/textbox-shader.gif')
+#arduino .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 0) 40%, rgba($bg, 0) 60%, $bg 100%), url('../img/arduino-music/arduino_music_visualizer.jpg')
+#kin-type .fade-img
+        background-image: linear-gradient(0deg, $bg 0, rgba($bg, 50%) 40%, rgba($bg, 50%) 60%, $bg 100%), url('../img/kinetic-typography/kintype_motion_typography.jpg')
+
+.section-title
+    border-left: $thin-border
+    margin-left: 1rem
+    padding-left: 1rem
+    
+    * + *
+        display: block
+        margin-top: .5rem
+
+    span
+        color: $mid-grey
+
+#process
+    @include for-size(desktop, up)
+        display: flex   
+        max-height: 100vh
+        height: 100%
+        // overflow-x: hidden
+        margin-top: 0
+        width: fit-content
+
+        .section-info
+            position: absolute
+            margin: 0
+
+        .section-details
+            width: fit-content
+            margin: 0 10rem
+            // padding: 0 10rem 
+            
+            img
+                max-height: 30% 
+
+            p
+                width: 50rem
+                max-width: 50rem
+
+.horizontal-scroll .section-details
+    @include for-size(desktop, up)
+        display: flex
+        flex-direction: row
+        @include align-vertical
+
+.horizontal-scroll
+    width: fit-content
+    
+// .sticky-height.process
+//     @include for-size(desktop, up)
+//         height: 600vh
+
+.section-details
+    
+    position: relative
+    display: flex
+    flex-direction: column
+    gap: 3rem
+
+    @include for-size(tablet-lg)
+        margin-top: 3rem
+        padding: 0 1rem
+    
+    @include for-size(tablet-lg, up)
+        align-items: center
+        margin: 2rem 0
+
+    p
+        $p-width: calc(100% - ($sm))
+        background-image: linear-gradient(0deg, rgba($bg, 0) 0, $bg 50%, rgba($bg, 0) 100%)
+        backdrop-filter: blur(10px)
+
+        @include for-size(phone)
+            width: 100%
+
+        @include for-size(phone, up)
+            max-width: 30em
+
+
+.project-result-img
+    width: 100%
+    height: 100%
+
+.video-player
+    @include grid-center
+    gap: 1rem
+    
+iframe
+    max-width: 100%
+
+.multiple-results
+    @include flex($gap: 2rem)
+    flex-direction: column
+
+.mona-link
+    @include grid-center
+    text-align: center
+    

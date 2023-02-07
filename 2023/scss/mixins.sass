@@ -1,0 +1,113 @@
+// Imports
+@import "variables.sass"
+
+@mixin text-shadow 
+    text-shadow: 0px 0px 16px #000000, 0px 0px 8px rgba(0, 0, 0, 0.5), 0px 0px 16px #000000
+
+@mixin drop-shadow 
+    filter: drop-shadow(0px 0px 16px #000000) drop-shadow(0px 0px 8px rgba(0, 0, 0, 0.5)) drop-shadow(0px 0px 16px #000000)
+
+@mixin drop-shadow-light 
+    filter: drop-shadow(0px 0px 24px rgba(0, 0, 0, 0.5)) drop-shadow(0px 0px 4px rgba(0, 0, 0, 0.25))
+
+@mixin uppercase($size: 1rem, $height: 1em, $weight: 400) 
+    font:
+        size: $size
+        weight: $weight
+    
+    line-height: $height
+    text-transform: uppercase
+
+@mixin flex($ai: center, $jc: center, $gap: 0) 
+    display: flex
+    align-items: $ai
+    justify-content: $jc
+    gap: $gap
+
+@mixin flex-center 
+    display: flex
+    align-items: center
+    justify-content: center
+
+@mixin grid($ai: center, $jc: center) 
+    display: grid
+    place-items: $ai $jc
+
+@mixin grid-center 
+    display: grid
+    place-items: center
+
+@mixin sticky-nav($left: auto, $top: 0, $right: 0, $bottom: auto) 
+    position: fixed
+    left: $left
+    top: $top
+    right: $right
+    bottom: $bottom
+
+@mixin absolute-tl($top: 0, $left: 0) 
+    position: absolute
+    left: $left
+    top: $top
+
+@mixin absolute-tr($top: 0, $right: 0) 
+    position: absolute
+    right: $right
+    top: $top
+
+@mixin absolute-bl($bottom: 0, $left: 0) 
+    position: absolute
+    left: $left
+    bottom: $bottom
+
+@mixin menu-toggle-styling($height: .25rem, $width: $sm, $top: 0, $left: 0, $transform: scaleX(1), $t-orig: left) 
+    transition-duration: 300ms
+    background-color: $main
+    content: ""
+    left: $left
+    transform-origin: $t-orig
+    position: absolute
+    height: $height
+    width: $width
+    top: $top
+    transform: $transform
+
+@mixin align-horizontal($left: 50%, $transform: translate(-50%, 0)) 
+    left: $left
+    transform: $transform
+
+@mixin align-vertical($top: 50%, $transform: translate(0, -50%)) 
+    top: $top
+    transform: $transform
+
+
+// https://cheewebdevelopment.com/element-first-scss-media-queries/
+@mixin for-size($breakpoint, $direction:down) 
+
+    // If the breakpoint exists in the map.
+    @if map-has-key($breakpoints, $breakpoint) 
+
+        // Get the breakpoint value.
+        $breakpoint-value: map-get($breakpoints, $breakpoint)
+
+        // Determine the direction and then write the media query.
+        @if $direction == up 
+            @media (min-width: $breakpoint-value) 
+                @content
+            
+        @else if $direction == down 
+            @media (max-width: $breakpoint-value) 
+                @content
+        
+        // If the breakpoint doesn't exist in the map, pass a manual breakpoint
+    @else 
+        @if $direction == up 
+            @media (min-width: $breakpoint) 
+                @content
+            
+    
+        @else if $direction == down 
+            @media (max-width: $breakpoint) 
+                @content
+            
+        
+    

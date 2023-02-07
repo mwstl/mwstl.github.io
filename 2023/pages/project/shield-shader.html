@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shield Shader | Micole Lai</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+</head>
+
+<body data-nav="false">
+    <div class="nav-sticky shift-right">
+        <button id="nav-toggle" type="button" onclick="toggleNav()" class="open">
+            <span class="menu-toggle"></span>
+        </button>
+        <div class="menu-logo-wrap">
+            <a href="../../index.html" class="menu-logo">ML</a>
+        </div>
+    </div>
+
+    <nav id="nav">
+        <div class="main-nav-links">
+            <ul>
+                <li><a href="../../index.html#about" class="text-link">About</a></li>
+                <li><a href="../../index.html#projects" class="text-link">Projects</a></li>
+                <li><a href="../gallery.html" class="text-link">Gallery</a></li>
+                <li><a href="../../index.html#footer" class="text-link">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="other-nav-links">
+            <ul>
+                <li><a href="https://www.linkedin.com" class="text-link">LinkedIn</a></li>
+                <li><a href="https://www.github.com" class="text-link">GitHub</a></li>
+                <li><a href="../../img/Micole-Lai_Resume-Updated.pdf" class="text-link">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-wrapper shift-right">
+
+        <main class="slider project">
+            <h1 class="page-title">Shield Shader</h1>
+
+            <section id="shield-shader" class="project-intro">
+                <div class="project-info col-span-8">
+                    <div class="project-skills">
+                        <h6>Skills</h6>
+                        <p>Unity, Amplify Shader Editor</p>
+                    </div>
+                    <div class="project-time">
+                        <h6>Time</h6>
+                        <p>May 2022 - June 2022</p>
+                        <p>XR Immersive Tech Internship</p>
+                    </div>
+                    <div class="project-contribution">
+                        <h6>Contributions</h6>
+                        <p>
+                            Learned to use Unity and Amplify Shader Editor to create a reactive shield shader.
+                        </p>
+                    </div>
+                </div>
+                <span class="fade-img col-span-8"></span>
+            </section>
+
+            <section id="context" class="project-details">
+                <div class="section-info">
+                    <div class="section-title">
+                        <h2>Context</h2>
+                        <span>//01</span>
+                    </div>
+                </div>
+                <div class="section-details col-span-4">
+                    <p>
+                        As a technical artist, the first tool I was tasked with creating was a shield shader that could
+                        be applied to any mesh. The shader would react according to any bullet object that hits the
+                        mesh. Dependig on the location of the impact, the shader will visually ripple outwards and glow
+                        to show that the shield has been hit.
+                    </p>
+                    <p>
+                        Within the <em>UNCONTAINED</em> project, we used Unity and the Amplify Shader Graph (ASG) plugin
+                        for many
+                        shaders because it allows us to utilise node-based shaders rather than code. At the time of
+                        starting, I had no prior knowledge of how to use Unity, much less ASG. However, I had some
+                        experience with Blender's material nodes, Cinema4D's XPresso editor, and generative coding in
+                        Processing, so I had some rough ideas about how to approach the task.
+                    </p>
+                </div>
+            </section>
+
+
+            <div class="sticky-height">
+                <div class="sticky-scroll">
+                    <section id="process" class="project-process horizontal-scroll">
+                        <div class="section-info">
+                            <div class="section-title">
+                                <h2>Process</h2>
+                                <span>//02</span>
+                            </div>
+                        </div>
+                        <div class="section-details">
+                            <p>
+                                Starting with a basic spherical mesh, I created a simple shader that utilises Fresnel
+                                and Screen
+                                Position Edge nodes to fade off towards the centre and appear more vividly around the
+                                edges. The
+                                visuals can be tweaked through the material using exposed property values. I also added
+                                an
+                                animated grid that moves vertically along the mesh.
+                            </p>
+                            <img src="../../img/shader/shield-shader-base.png" alt="">
+                            <p>
+                                The next step was figuring out how to make the visual impact. I started with simple
+                                black and
+                                white values (0-1), as this could be adapted for use as a multiplier for sprite image
+                                strengths
+                                or displacement values. The basic idea behind this is to get the location of the hit on
+                                the mesh
+                                and then compare it with the surrounding UV or vertex positions to see if they are
+                                within a
+                                certain distance of the Hit Location. I created a script that takes Unity's
+                                InverseTransformPoint function to convert the world vector (position according to the
+                                whole
+                                world) of the collision to a local vector (position according to the mesh/game object)
+                                that is
+                                then passed through into the shader's property.
+                            </p>
+                            <img src="../../img/shader/shield-shader-impact.png" alt="">
+                            <p>
+                                Additionally, I added in a fading edge gradient that can be controlled so the impact
+                                gradually
+                                fades off to the centre. The above three images use a mid-high value for the Hit Size
+                                and show
+                                the difference between how the edge fading can be tweaked. This is also a timed effect
+                                controlled through the script, so that the impact will fade after a certain time.
+                            </p>
+                            <img src="../../img/shader/shield-shader-code.jpg" alt="">
+                            <p>
+                                I consulted my colleague, Lawrence Yip, for help with the collision tags. As the project
+                                was
+                                already fleshed out, certain game objects were linked to different tags/layers, and some
+                                of
+                                these did not interact with each other. By making sure that the shield object and the
+                                bullet
+                                object were on layers that were interactable, I was able to get the collisions to work.
+                            </p>
+                            <img src="../../img/shader/shield-shader-displacement-graph.jpg" alt="">
+                            <p>
+                                The next step was to add some displacement to the mesh at the hit location. Because I
+                                used 0-1
+                                values for the visuals, I was able to simply multiply the hit effect I made earlier with
+                                a
+                                controllable displacement strength to make it seem as if the impact had physically
+                                distorted the
+                                mesh.
+                            </p>
+                            <img src="../../img/shader/shield-shader-flipbook.gif" alt="">
+                            <p>
+                                At this point, the shader was mostly done, but to extend the usefulness of the mesh, I
+                                was asked
+                                to adapt it for more complex meshes and to allow for sprite sheets or textures to be
+                                used rather
+                                than a simple sphere.
+                            </p>
+                            <img src="../../img/shader/shield-shader-fresnel.png" alt="">
+                            <p>
+                                I received help from another colleague, Stefan Bloedorn, in getting the images to
+                                correctly
+                                display according to the UV mapped meshes. This works by rotating the texture node's UV
+                                positioning according to the vertex position of the Hit Location, effectively enabling
+                                the
+                                effect to work on complex meshes and UVs.
+                            </p>
+                            <img src="../../img/shader/shield-shader-help.png" alt="">
+                        </div>
+                    </section>
+                </div>
+            </div>
+
+            <section id="reflection" class="project-details">
+                <div class="section-info">
+                    <div class="section-title">
+                        <h2>Reflection</h2>
+                        <span>//03</span>
+                    </div>
+                </div>
+                <div class="section-details">
+                    <p>
+                        Throughout the making of the shield shader, I learnt the basics of how to use Unity and delved
+                        into the more complex creation of a shader tool. One thing I kept in mind while creating the
+                        shader was how a game artist or developer might want to customise the shader. This led me to use
+                        float controls to easily iterate and modify the shader according to different needs and
+                        stylistic choices, and to make these options readily available through the material using
+                        exposed property values.
+                    </p>
+                    <p>
+                        I stretched my skills through the various layers of creating the shield shader, from the basic
+                        visuals to the collision impact positioning, timed effects, and displacement. By implementing
+                        various skillsets, from programming to node-based development, and through continual iteration,
+                        I managed to create a working shield shader.
+                    </p>
+                    <p>
+                        Additionally, I learnt some workflow management and organisation skills as textures, shaders,
+                        materials, meshes, and so forth followed naming conventions and were sorted into folders. This
+                        made it easy to find previous examples in the project that I occasionally referenced to get some
+                        inspiration on how to tackle the shader.
+                    </p>
+                </div>
+            </section>
+
+            <footer class="shift-right" id="footer">
+                <div class="footer-wrapper">
+                    <div class="footer-links-main">
+                        <a href="../../index.html#about" class="text-link">About</a>
+                        <a href="../../index.html#projects" class="text-link">Projects</a>
+                        <a href="../gallery.html" class="text-link">Gallery</a>
+                        <a href="../../index.html#footer" class="text-link">Contact</a>
+                        <a href="../styleguide.html" class="text-link">Styleguide</a>
+                    </div>
+                    <div class="footer-links-contact">
+                        <p>You can find me here</p>
+                        <div class="icons">
+                            <a href="https://www.linkedin.com"><img src="../../img/tool-icons/linkedin-icon.png"
+                                    alt=""></a>
+                            <a href="https://www.github.com"><img src="../../img/tool-icons/github-icon.png" alt=""></a>
+                            <a href="mailto:micolelai@gmail.com"><img src="../../img/tool-icons/email-icon.png"
+                                    alt=""></a>
+                            <a href="../../img/Micole-Lai_Resume-Updated.pdf" target="_blank"><img
+                                    src="../../img/tool-icons/pdf-icon.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="copyright">Micole Lai &copy; 2022</p>
+            </footer>
+        </main>
+
+    </div>
+
+    <div class="progress-wrap shift-right">
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+        integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
+        integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../../js/script.js"></script>
+</body>
+
+</html>

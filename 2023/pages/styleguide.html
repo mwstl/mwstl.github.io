@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SCSS Styleguide</title>
+
+    <link href="../css/main.css" rel="stylesheet">
+</head>
+
+<body data-nav="false">
+    <div class="nav-sticky shift-right">
+        <button id="nav-toggle" type="button" onclick="toggleNav()" class="open">
+            <span class="menu-toggle"></span>
+        </button>
+        <a href="../index.html" class="menu-logo">ML</a>
+    </div>
+
+    <nav id="nav">
+        <div class="main-nav-links">
+            <ul>
+                <li><a href="../index.html#about" class="text-link">About</a></li>
+                <li><a href="../index.html#projects" class="text-link">Projects</a></li>
+                <li><a href="gallery.html" class="text-link">Gallery</a></li>
+                <li><a href="../index.html#footer" class="text-link">Contact</a></li>
+            </ul>
+        </div>
+
+        <div class="other-nav-links">
+            <ul>
+                <li><a href="https://www.linkedin.com" class="text-link">LinkedIn</a></li>
+                <li><a href="https://www.github.com" class="text-link">GitHub</a></li>
+                <li><a href="../img/Micole-Lai_Resume-Updated.pdf" class="text-link">Resume</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="content-wrapper shift-right">
+        <main class="slider styleguide">
+            <h1 class="page-title">Styleguide</h1>
+
+            <section id="colors" class="sg-section slider-inner">
+                <h2>Colour Palette</h2>
+
+                <div class="color-palette ">
+                    <div class="color">
+                        <p class="color-type">Main</p>
+                        <div class="color-details">
+                            <p>#FFFFFF</p>
+                            <p>255, 255, 255</p>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <p class="color-type">Mid-grey</p>
+                        <div class="color-details">
+                            <p>#E1E3E8</p>
+                            <p>225, 227, 232</p>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <p class="color-type">Background</p>
+                        <div class="color-details">
+                            <p>#131313</p>
+                            <p>19, 19, 19</p>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <p class="color-type">Light Accent</p>
+                        <div class="color-details">
+                            <p>#97A1C5</p>
+                            <p>151, 161, 197</p>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <p class="color-type">Accent</p>
+                        <div class="color-details">
+                            <p>#6586FE</p>
+                            <p>101, 134, 254</p>
+                        </div>
+                    </div>
+                    <div class="color">
+                        <p class="color-type">Dark Accent</p>
+                        <div class="color-details">
+                            <p>#3B3F4D</p>
+                            <p>59, 63, 77</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="typography" class="sg-section">
+                <h2>Typography</h2>
+
+                <div class="code-section ">
+                    <div class="bg-text-main sg">Headings</div>
+
+                    <div class="toggle-code">
+                        <div class="h1 toggle-title">Heading 1</div>
+
+                        <div class="code">
+                            <pre><code>
+h1 {
+    font-weight: 400;
+    font-size: 4rem;
+    line-height: 5rem;
+    text-transform: uppercase;
+    text-shadow: 
+    0px 0px 16px #000000, 
+    0px 0px 8px rgba(0, 0, 0, 0.5),
+    0px 0px 16px #000000;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="h2 toggle-title">Heading 2</div>
+
+                        <div class="code">
+                            <pre><code>
+h2 {
+    font-weight: 300;
+    font-size: 2.25rem;
+    line-height: 2.75rem;
+    text-transform: uppercase;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="h3 toggle-title">Heading 3</div>
+
+                        <div class="code">
+                            <pre><code>
+h3 {
+    font-weight: 400;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    text-transform: uppercase;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-section ">
+                    <div class="bg-text-main sg">Text</div>
+
+                    <div class="toggle-code">
+                        <div class="p toggle-title">Paragraph</div>
+
+                        <div class="code">
+                            <pre><code>
+p {
+    font-weight: 300;
+    font-size: 1.5rem;
+    line-height: 2rem;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="em toggle-title">Emphasis</div>
+
+                        <div class="code">
+                            <pre><code>
+em {
+    font-weight: 500;
+    font-size: 1.5rem;
+    line-height: 2rem;
+    color: var(--acc);
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="bg-text-main toggle-title">Background Text</div>
+
+                        <div class="code">
+                            <pre><code>
+.bg-text-main {
+    font-weight: 100;
+    font-size: 3rem;
+    line-height: 3.75rem;
+    text-transform: uppercase;
+    color: var(--main);
+    opacity: 0.25;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+
+                    <div class="toggle-code">
+                        <div class="bg-text-detail toggle-title">Background Detail</div>
+
+                        <div class="code">
+                            <pre><code>
+.bg-text-detail {
+    font-weight: 300;
+    font-size: 1.25rem;
+    line-height: 1.5rem;
+    text-transform: uppercase;
+    color: var(--acc-dark);
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-section ">
+                    <div class="bg-text-main sg">Lists</div>
+
+                    <div class="toggle-code">
+                        <ul class="bullet-list toggle-title">
+                            <li>Bullet</li>
+                            <li>List</li>
+                        </ul>
+
+                        <div class="code">
+                            <pre><code>
+li .bullet-list {
+    list-style-type: georgian;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <ol class="num-list toggle-title">
+                            <li>Numbered</li>
+                            <li>List</li>
+                        </ol>
+
+                        <div class="code">
+                            <pre><code>
+li .bullet-list {
+    list-style-type: square;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="interactive" class="sg-section">
+                <h2>Interactive Elements</h2>
+
+                <div class="code-section ">
+                    <div class="bg-text-main sg">Links</div>
+
+                    <div class="toggle-code">
+                        <div class="toggle-title">
+                            <div class="cta-link">
+                                Primary Link
+                            </div>
+                        </div>
+
+                        <div class="code">
+                            <pre><code>
+.cta-link {
+    font-size: 2rem;
+    font-weight: 400;
+    line-height: 1em;
+    text-transform: uppercase;
+    position: relative;
+    display: block;
+    width: fit-content;
+    transition: 
+    color 200ms ease;
+}
+            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="toggle-title">
+                            <div class="cta-block">
+                                Clickable Element
+                            </div>
+                        </div>
+
+                        <div class="code">
+                            <pre><code>
+.cta-block {
+    font-size: 2rem;
+    font-weight: 500;
+    padding: 2rem;
+    width: fit-content;
+    border: 1px solid #fff;
+    transition: 
+    background-color 200ms ease;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="toggle-title">
+                            <div class="text-link">
+                                Text Link
+                            </div>
+                        </div>
+
+                        <div class="code">
+                            <pre><code>
+.text-link {
+    font-size: 1.5rem;
+    font-weight: 200;
+    line-height: 1em;
+    text-transform: uppercase;
+    position: relative;
+    width: fit-content;
+    padding-left: 0.25em;
+    cursor: pointer;
+    text-decoration: none;
+    color: #fff;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+                <div class="code-section">
+                    <div class="bg-text-main sg">Inputs</div>
+
+                    <div class="toggle-code">
+                        <div class="toggle-title">
+                            <span class="input-span"><input class="text-input" type="text" id="sg-example"
+                                    name="sg-example" placeholder="Input Field"></span>
+                        </div>
+
+                        <div class="code">
+                            <pre><code>
+input[type=text] {
+    font-size: 1rem;
+    background: none;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid #fff;
+    padding: 0.5em 0.75em;
+    color: #fff;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="toggle-title">
+                            <form class="radio-input">
+                                <label class="radio-btn">
+                                    <input type="radio" name="sg-radio-example" value="Radio">
+                                    Radio
+                                </label>
+                                <label class="radio-btn">
+                                    <input type="radio" name="sg-radio-example" value="Button">
+                                    Button
+                                </label>
+                            </form>
+                        </div>
+
+                        <div class="code">
+                            <pre><code>
+input[type=radio] {
+    display: grid;
+    place-items: center;
+    width: 1.1em;
+    height: 1.1em;
+    border: 1px solid #a7a8af;
+    transition: 
+        transform 150ms ease;
+    border-radius: 50%;
+}
+
+input[type=radio]:checked {
+    border-color: #6586fe;
+}
+
+input[type=radio]:before {
+    content: "";
+    transition: 
+        transform 150ms ease;
+    box-shadow: 
+        inset 1em 1em #6586fe;
+}
+                            </code></pre>
+                        </div>
+                    </div>
+
+                    <div class="toggle-code">
+                        <div class="toggle-title">
+                            <form class="check-input">
+                                <label class="check-btn">
+                                    <input type="checkbox" name="sg-check-example" value="Check">
+                                    Check
+                                </label>
+                                <label class="check-btn">
+                                    <input type="checkbox" name="sg-check-example" value="Box">
+                                    Box
+                                </label>
+                            </form>
+                        </div>
+
+                        <div class="code">
+                            <pre><code>
+input[type=checkbox] {
+    display: grid;
+    place-items: center;
+    width: 1.1em;
+    height: 1.1em;
+    border: 1px solid #a7a8af;
+    transition: 
+        transform 150ms ease;
+    border-radius: 50%;
+}
+
+input[type=checkbox]:checked {
+    border-color: #6586fe;
+}
+
+input[type=checkbox]:before {
+    content: "";
+    transition: 
+        transform 150ms ease;
+    box-shadow: 
+        inset 1em 1em #6586fe;
+    width: 1em;
+    height: 1em;
+    transform-origin: bottom-left;
+    clip-path: polygon(
+        10% 0%, 
+        0% 10%, 
+        40% 50%, 
+        0% 90%, 
+        10% 100%, 
+        50% 60%, 
+        90% 100%, 
+        100% 90%, 
+        60% 50%, 
+        100% 10%, 
+        90% 0%, 
+        50% 40%
+    );
+}
+                            </code></pre>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section id="citations" class="sg-section">
+                <h2>Citations</h2>
+
+                <div class="cite-list">
+                    <p>Faye, L. (2019, August 15). Element first SCSS media queries. Chee Web Development. Retrieved
+                        December 8, 2022, from https://cheewebdevelopment.com/element-first-scss-media-queries/
+                    </p>
+                    <p>
+                        Ricks, T. (2022). Live - Gsap Horizontal Scroll. YouTube. YouTube. Retrieved December 8, 2022,
+                        from https://www.youtube.com/watch?v=xEkbMs6BR88.
+                    </p>
+                    <p>
+                        Edwin, S. (2022). How To Create Pro 3D Websites Tutorial From Scratch. YouTube. Retrieved
+                        December 8, 2022, from https://www.youtube.com/watch?v=UIlVeMFEWa8.
+                    </p>
+                </div>
+            </section>
+
+            <footer class="shift-right" id="footer">
+                <div class="footer-wrapper">
+                    <div class="footer-links-main">
+                        <a href="../index.html#about" class="text-link">About</a>
+                        <a href="../index.html#projects" class="text-link">Projects</a>
+                        <a href="gallery.html" class="text-link">Gallery</a>
+                        <a href="../index.html#footer" class="text-link">Contact</a>
+                        <a href="styleguide.html" class="text-link">Styleguide</a>
+                    </div>
+                    <div class="footer-links-contact">
+                        <p>You can find me here</p>
+                        <div class="icons">
+                            <a href="https://www.linkedin.com"><img src="../img/tool-icons/linkedin-icon.png"
+                                    alt=""></a>
+                            <a href="https://www.github.com"><img src="../img/tool-icons/github-icon.png" alt=""></a>
+                            <a href="mailto:micolelai@gmail.com"><img src="../img/tool-icons/email-icon.png" alt=""></a>
+                            <a href="../img/Micole-Lai_Resume-Updated.pdf" target="_blank"><img
+                                    src="../img/tool-icons/pdf-icon.png" alt=""></a>
+                        </div>
+                    </div>
+                </div>
+
+                <p class="copyright">Micole Lai &copy; 2022</p>
+            </footer>
+        </main>
+
+    </div>
+
+    <div class="progress-wrap shift-right">
+        <div class="progress-container">
+            <div class="progress-bar"></div>
+        </div>
+    </div>
+
+
+    <script src="http://code.jquery.com/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/gsap.min.js"
+        integrity="sha512-gmwBmiTVER57N3jYS3LinA9eb8aHrJua5iQD7yqYCKa5x6Jjc7VDVaEA0je0Lu0bP9j7tEjV3+1qUm6loO99Kw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.11.3/ScrollTrigger.min.js"
+        integrity="sha512-tHvUcUQYi35zApvAa5TNR3fNhBQkVtkmWKfacnpxmix4/VTGz1lGjIVyLMp7gLgAvg+aKJjnVKokXJNS5GZ+/g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="../js/script.js"></script>
+</body>
+
+</html>
