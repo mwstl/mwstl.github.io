@@ -239,7 +239,7 @@ input:checked + .card .row > .bg-img {
   background-image: url("../assets/new-projects/IAT431-bossware-poster1.png");
 }
 .card[for="c4"] > .row > .bg-img {
-  background-image: url("../assets/arduino_music_visualizer.png");
+  background-image: url("../assets/new-projects/334-social-hi-fi-web.png");
 }
 .card[for="c5"] > .row > .bg-img {
   background-image: url("../assets/new-projects/antlion-home.jpg");
