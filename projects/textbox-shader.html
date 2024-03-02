@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Textbox Shader | Micole Lai</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="https://kit.fontawesome.com/d035d37c08.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body class="project-page">
+
+    <section id="menubar">
+        <div class="fixedbar">
+            <a href="../index.html" class="logotype">Micole Lai</a>
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+        <nav id="menu-links">
+            <ul>
+                <li><a href="../index.html">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="project-intro">
+        <p>
+            May 2022 - June 2022
+            <br />
+            XR Immersive Tech Internship
+        </p>
+        <div class="project-image">
+            <h2>Textbox Shader</h2>
+            <div class="project-image-wrap">
+                <div class="project-image-gradient"></div>
+                <img src="../assets/img/shader/textbox-shader-thumb.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="intro-text">
+            <div class="overview">
+                <h4>Overview</h4>
+                <p>
+                    This shader is meant to work on a plane object and is driven through the shader without relying on
+                    Unity's Canvas. It can scale to any dimension to accomodate varying lengths of text and paragraphs.
+                </p>
+            </div>
+
+            <div class="role">
+                <h4>Role</h4>
+                <p>
+                    Created a shader that takes a HUD design texture and scales it, automatically keeping corners
+                    proportionate
+                </p>
+            </div>
+
+            <div class="skills">
+                <h4>Skills</h4>
+                <p>
+                    Unity, Amplify Shader Editor
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <div class="details-section">
+            <h3>Masking Techniques</h3>
+            <p>
+                The shader works by using masks to display certain parts of the HUD texture, and then constraining them
+                to the corners or edges. In my first iteration, I used separate textures for each of the corners. I was
+                also taught a technique by Farbod Tabei, where I could to use a colors (where the image is split
+                into 3x3, and each section is a different color) to mask out a single image rather than splitting the
+                HUD texture into multiple images, saving resources.
+            </p>
+            <img src="../assets/img/shader/textbox-shader-graph.png" alt="">
+            <p>
+                Most of the shader is powered through calculations that use the Object Scale node to modify the Texture
+                Coodinate Tiling and Offset. Below is a portion of the graph that shows the horizontal middle
+                calculations.
+            </p>
+            <img src="../assets/img/shader/textbox-shader-graph-details.png" alt="">
+            <p>
+                The texbox image can be changed directly through the material. Although the final shader uses multiple
+                textures for the masks, the user only has to change the first texture. The horizontal and vertical
+                middle sections can also be adjusted if needed.
+            </p>
+            <img src="../assets/img/shader/textbox-shader-use.png" alt="">
+        </div>
+
+        <div class="details-section">
+            <h3>Reflection</h3>
+            <img src="../assets/img/shader/textbox-shader.gif" alt="">
+            <p>
+                This shader was an interesting exercise as it was more mathematically based. Although part of the
+                process was
+                experimentation, I thought through and observed what changes were happening as the plane was being
+                scaled. The colour masking technique was also an interesting one as I had not known about it before.
+            </p>
+        </div>
+    </section>
+
+    <div class="project-nav">
+        <a href="fighter-jet.html"><i class="fa-solid fa-arrow-left"></i>Previous project</a>
+        <a href="shield-shader.html">Next project<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <footer>
+        <p class="copyright light">Micole Lai &copy; 2024</p>
+    </footer>
+
+
+</body>
+
+</html>

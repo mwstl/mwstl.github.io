@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Antlion | Micole Lai</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="https://kit.fontawesome.com/d035d37c08.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body class="project-page">
+
+    <section id="menubar">
+        <div class="fixedbar">
+            <a href="../index.html" class="logotype">Micole Lai</a>
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+        <nav id="menu-links">
+            <ul>
+                <li><a href="../index.html">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="project-intro">
+        <p>
+            Fall Semester 2023
+            <br />
+            Group project
+        </p>
+        <div class="project-image">
+            <h2>Antlion Platformer</h2>
+            <div class="project-image-wrap">
+                <div class="project-image-gradient"></div>
+                <img src="../assets/img/312-game/antlion-home.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="intro-text">
+            <div class="overview">
+                <h4>Overview</h4>
+                <p>
+                    For our first project in IAT312, we were tasked with redesigning a prototype of a game utilizing
+                    game design concepts taught in the course. The original game involved the player (an ant) escaping
+                    from a sinkhole with an antlion predator at the bottom. My team members included Janelle Hong
+                    (planning, support), Jimmy
+                    Lin (art), and Kenny Zhang (lead programming).
+                </p>
+            </div>
+
+            <div class="role">
+                <h4>Role</h4>
+                <p>
+                    Game concept ideation, level design, sprite animation, playtesting evaluation.
+                </p>
+            </div>
+
+            <div class="skills">
+                <h4>Skills</h4>
+                <p>
+                    Unity, Figma
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <div class="details-section">
+            <h3>Planning</h3>
+            <p>
+                As a team, we first began reviewing the project requirements and then ideated what type of game we
+                wanted to make. There was a lot of freedom for us in the project, and we chose to change the game to a
+                sidescrolling platformer in which the player explores an underground ant hill.
+            </p>
+            <p>
+                We wanted to implement some story and background to the characters as motivation for the player. As a
+                result, in our mini story, our protagonist is out on the search for food for their family, but ends up
+                wandering too far. Our game begins with the player trying to navigate their way home.
+            </p>
+            <img src="../assets/img/312-game/antlion-boss.jpg" alt="">
+        </div>
+
+        <div class="details-section">
+            <h3>Map Design</h3>
+            <p>
+                Using tilemaps I created the levels that the player goes through. Some things I had to consider were how
+                well the player could navigate the map, challenges and rewards, and the placement of items and enemies.
+                I wanted to focus on leading the player around to different areas to give them a sense of exploration
+                and fun.
+            </p>
+            <img src="../assets/img/312-game/antlion-tileset.png" alt="">
+            <p>
+                We used the <a href="https://cainos.itch.io/pixel-art-platformer-village-props">Pixel Art Platformer -
+                    Village Props asset pack by Cainos</a> to create the levels.
+            </p>
+        </div>
+
+        <div class="details-section">
+            <h3>Sprite Animation</h3>
+            <p>
+                The protagonist sprites were created by Jimmy. I brought them into Unity and connected the player input
+                and movement with the sprite animations using the Animator tool. Part of this involved creating a simple
+                looping animation for the resting, walking, jumping, and falling states. After creating the animations,
+                I then used the Animator Controller to create the logic for the transitions between the states.
+            </p>
+            <img src="../assets/img/312-game/antlion-anim.gif" alt="">
+            <p>
+                Throughout the prototype iterations, we continually sought feedback from playtesters (our friends) who
+                gave their input on our progress and how fun they felt the game was. Some of the feedback included how
+                they felt about the level, the movement, bait mechanics, and more. These were improved to the best of
+                our ability within the given timeline.
+            </p>
+        </div>
+
+        <div class="details-section">
+            <h3>Reflection</h3>
+            <div class="cta-wrapper">
+                <a href="https://kennyzhang620.github.io/TBD_TEST/" class="cta medium">Play the game!</a>
+            </div>
+            <img src="../assets/img/312-game/antlion-home.jpg" alt="">
+            <p>
+                Although there were some bugs that couldn't be completely worked out, the game came together quite well
+                and we were able to produce a final game within a short timeline during our first time working as a
+                team. I liked using the animator to create the animations and working out the timings and looping
+                was interesting. Additionally, it was intriguing seeing how the levels I designed was navigated by
+                someone else, as I could see the different ways people explored the level.
+            </p>
+        </div>
+    </section>
+
+    <div class="project-nav">
+        <div></div>
+        <a href="argon-chalice.html">Next project<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <footer>
+        <p class="copyright light">Micole Lai &copy; 2024</p>
+    </footer>
+
+</body>
+
+</html>

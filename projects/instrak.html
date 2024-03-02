@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instrak | Micole Lai</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="https://kit.fontawesome.com/d035d37c08.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body class="project-page">
+
+    <section id="menubar">
+        <div class="fixedbar">
+            <a href="../index.html" class="logotype">Micole Lai</a>
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+        <nav id="menu-links">
+            <ul>
+                <li><a href="../index.html">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="project-intro">
+        <p>
+            Summer Semester 2023
+            <br />
+            Group final project
+        </p>
+        <div class="project-image">
+            <h2>Instrak - Music Equipment Tracker</h2>
+            <div class="project-image-wrap">
+                <div class="project-image-gradient"></div>
+                <img src="../assets/img/334-app/334-instrack.png" alt="">
+            </div>
+        </div>
+
+        <div class="intro-text">
+            <div class="overview">
+                <h4>Overview</h4>
+                <p>
+                    For our course final project, my group wanted to create an app around the theme of music. A project
+                    concern was avoiding the common music player or guided meditation app, and we ended up deciding on a
+                    music equipment tracker for high school music directors. My team members were Dongmei Han, Jinous
+                    Safaei, Mark Duinkerke, and Yifei Wang.
+                </p>
+            </div>
+
+            <div class="role">
+                <h4>Role</h4>
+                <p>
+                    Research, user interviews, analysis, wireflow, prototyping, UI design
+                </p>
+            </div>
+
+            <div class="skills">
+                <h4>Skills</h4>
+                <p>
+                    Figma, FigJam
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <div class="details-section">
+            <h3>Project Planning</h3>
+            <p>
+                We first started with secondary research from online sources. Some topics that we researched were
+                surrounding instrument care, library archiving, existing school equipment tracking tools, and instrument
+                rental and maintenance.
+            </p>
+            <p>
+                We also conducted some interviews with some people we knew who were involved with music and music
+                directing. I conducted 3 interviews with my Air Cadet friends who participated in the squadron band and
+                their school bands. Some of my interviewees were ensemble directors and others were section leads.
+                During the interviews, I used some pre-determined questions to guide the conversation and then asked
+                more insightful questions in response to the interviewees' answers.
+            </p>
+            <img src="../assets/img/334-app/334-initial-ideas.jpg" alt="">
+            <p>
+                After determining the topic domain, issues, and similar existing apps, we began thinking of what screens
+                and processes the user would be going through while during the process of tracking instruments. This
+                includes cataloguing the instruments, assigning them and returning them from students, and the students
+                and ensembles currently in the school.
+            </p>
+        </div>
+
+        <div class="details-section">
+            <h3>Initial Design</h3>
+            <p>
+                After determining the topic domain, issues, and similar existing apps, we began thinking of what screens
+                and processes the user would be going through while during the process of tracking instruments. This
+                includes cataloguing the instruments, assigning them and returning them from students, and the students
+                and ensembles currently in the school.
+            </p>
+            <img src="../assets/img/334-app/334-app-pages.jpg" alt="">
+            <p>
+                To further contextualize the issue, we also created a user experience map to analyse the thoughts and
+                opportunities throughout the different phases of the instrument tracking process.
+            </p>
+            <img src="../assets/img/334-app/334-user-journey-experience.png" alt="">
+            <p>
+                During our first design proposal, we were given feedback that the app was somewhat boring and were asked
+                to find a way to make the cataloguing process quicker, instead of feeling like filling out a form. To
+                some extent, some of the information needed to keep track of the instrument could not be avoided, but we
+                thought of using solutions like using photos and computer vision to help expedite the process.
+            </p>
+            <img src="../assets/img/334-app/334-wireflows.svg" alt="">
+        </div>
+
+        <div class="details-section">
+            <h3>Design Iterations</h3>
+            <p>
+                Based on feedback we recieved, I also designed some more experimental designs that broke away from our
+                initial design and were meant to
+                explore possible interactions in a more unconstrained way.
+            </p>
+            <img src="../assets/img/334-app/334-design-experiments.jpg" alt="">
+            <p>
+                I also redesigned the instrument info pages to show the most relevant information at a glance without
+                requiring the user to scroll. Additionally, we decided to add in some events to the app where the music
+                directors could assign a groups or specific instruments to an event. I ended up making 3 variations of
+                the event page.
+            </p>
+            <img src="../assets/img/334-app/334-design-iterations.jpg" alt="">
+        </div>
+
+        <div class="details-section">
+            <h3>Refining</h3>
+            <p>
+                Throughout this process, we conducted user testing with friends to see how well the app worked. Some
+                issues our users encountered involved the onboarding process, cataloguing efficiency, returning,
+                assigning, and request process, and the events page. We then rethought and redesigned these processes to
+                alleviate those issues.
+            </p>
+            <p>
+                When users first open the app, it was blank because there are no instruments in the catalogue. As a
+                result, our users were left feeling lost and confused right from the start. To solve this, we created a
+                brief onboarding process with popups that indicate what the different buttons do and what process the
+                user should be going through to catalogue and assign or return instruments.
+            </p>
+            <p>
+                To fix the other issues, we focused how to better guide the user through the processes (cataloguing,
+                returning, assigning, requesting...). Some of these were resolved through better copy and blank state
+                instructions.
+            </p>
+        </div>
+
+        <div class="details-section">
+            <h3>Results</h3>
+            <p>
+                This project was quite work intensive, requiring us to ideate the app concept, features, screens, all
+                while designing the interface and prototyping the interactions. I found that I enjoyed the process of
+                designing the visual interfaces the most fun, especially while creating some experimental iterations. It
+                was interesting getting feedback from the teaching team and thinking of solutions to make the experience
+                more streamlined and intuitive for the user. Although the final prototype did not turn out as polished
+                as I had initially hoped, I am still quite satisfied with the result of our project.
+            </p>
+            <img src="../assets/img/334-app/334-instrack.png" alt="">
+            <div class="cta-wrapper">
+                <a href="https://www.figma.com/proto/ocx3uJS7DCXIbvIRjYGcUf/W4-5--Final-Wireframe?page-id=99%3A6519&node-id=330-17941&starting-point-node-id=206%3A8889&mode=design&t=ntwhbFa0VtPaGtxo-1"
+                    class="cta medium">Prototype</a>
+                <a href="https://instrument-app.webflow.io/" class="cta medium">Website</a>
+            </div>
+        </div>
+    </section>
+
+    <div class="project-nav">
+        <a href="cy-fi.html"><i class="fa-solid fa-arrow-left"></i>Previous project</a>
+        <a href="kinetic-typography.html">Next project<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <footer>
+        <p class="copyright light">Micole Lai &copy; 2024</p>
+    </footer>
+
+</body>
+
+</html>

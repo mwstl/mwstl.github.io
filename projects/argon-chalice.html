@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Argon Chalice | Micole Lai</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="https://kit.fontawesome.com/d035d37c08.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="app.js"></script>
+</head>
+
+<body class="project-page">
+
+    <section id="menubar">
+        <div class="fixedbar">
+            <a href="../index.html" class="logotype">Micole Lai</a>
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+        <nav id="menu-links">
+            <ul>
+                <li><a href="../index.html">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="project-intro">
+        <p>
+            Fall Semester 2023
+            <br />
+            Group project
+        </p>
+        <div class="project-image">
+            <h2>Argon Chalice Visual Novel</h2>
+            <div class="project-image-wrap">
+                <div class="project-image-gradient"></div>
+                <img src="../assets/img/312-game/argon-chalice-intro.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="intro-text">
+            <div class="overview">
+                <h4>Overview</h4>
+                <p>
+                    This is our second project in IAT312. The aim of this project was to explore storytelling elements
+                    in games. We were tasked with redesigning a previous project from the course, a mini escape game map
+                    made in Minecraft. Based on a video playthrough of the map, we were told to improve the story
+                    narrative and create a new game based on it. My team members included Janelle Hong (scriptwriter),
+                    Jimmy Lin (artist), and Kenny Zhang (lead programmer).
+                </p>
+            </div>
+
+            <div class="role">
+                <h4>Role</h4>
+                <p>
+                    Project planning and ideation, support programming, UI design.
+                </p>
+            </div>
+
+            <div class="skills">
+                <h4>Skills</h4>
+                <p>
+                    Unity, Figma
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <div class="details-section">
+            <h3>Planning</h3>
+            <p>
+                In our first meeting we brainstormed possible story ideas based around the theme of escaping from a
+                dungeon. I used ChatGPT to create several brief initial concept ideas. As a group we chose one to move
+                forward with, which was then expanded into a 5 act narrative.
+            </p>
+            <img src="../assets/img/312-game/argon-chalice-story.jpg" alt="">
+            <p>
+                We decided that a visual novel format would work well to help us highlight the storytelling elements of
+                the game. Initially, we were thinking of using Renpy to create the game. However, we ended up settling
+                on using Unity due to the short timeframe and flexibility.
+            </p>
+            <img src="../assets/img/312-game/argon-chalice-beats.jpg" alt="">
+        </div>
+
+        <div class="details-section">
+            <h3>Development</h3>
+            <p>
+                I created some simple sprites to use as UI elements, mainly focusing on the textareas and inventory.
+                Additionally, I also implemented some hints that appear every once in a while depending on which stage
+                of the game the player is in.
+            </p>
+            <img src="../assets/img/312-game/argon-chalice-ui.jpg" alt="">
+            <p>
+                The first mini-game I programmed was a simple Simon-Says memory game. Here, the player is presented with
+                a grid of runes that will sequentially light up, the player will have to remember the sequence and click
+                the runes in order. The order of the runes is selected randomly and stored in an array. Each stage will
+                increase the number of runes required to pass.
+            </p>
+            <img src="../assets/img/312-game/argon-chalice-simon-says.gif" alt="">
+            <p>
+                I also helped program the initial tug-of-war at the climax of the story as the protagonist "fights"
+                against the antagonist. This was a simple timer based mechanic where the player must click the button to
+                mvoe the bar before the timer runs out. This was eventually reworked by Kenny to use the spacebar and
+                implement physics to mimic the pulling of a tug-of-war.
+            </p>
+            <img src="../assets/img/312-game/argon-chalice-tug-of-war.gif" alt="">
+            <p>
+                Based on playtesting feedback, the tug-of-war narrative was quite long and players were getting tired
+                during the dialogue. To help circumvent this, I added in a "shortcut" that will appear randomly and
+                allow the player to cut to the end if they succeed in the mini-game.
+            </p>
+        </div>
+
+        <div class="details-section">
+            <h3>Results</h3>
+            <div class="cta-wrapper">
+                <a href="https://kennyzhang620.github.io/P2-312A/" class="cta medium">Play the game!</a>
+            </div>
+            <img src="../assets/img/312-game/argon-chalice-intro.jpg" alt="">
+            <p>
+                We ended up with a visual novel game where the player must explore around different scenes, find clues,
+                and solve puzzles to escape. Dialogue and character choices will affect the story and the player must
+                pass the different challenges to survive.
+            </p>
+        </div>
+
+        <div class="details-section">
+            <h3>Reflection</h3>
+            <p>
+                I acted as more of a general support member throughout this project, assisting my teammates with various
+                tasks. I found it quite fun moving between different types of tasks as there was never a dull moment.
+                This also gave me a good holistic understanding of the entire project, as I focused on tying together
+                loose
+                ends and harmonising different parts of the game during our final sprint.
+            </p>
+        </div>
+    </section>
+
+    <div class="project-nav">
+        <a href="antlion.html"><i class="fa-solid fa-arrow-left"></i>Previous project</a>
+        <a href="bossware.html">Next project<i class="fa-solid fa-arrow-right"></i></a>
+    </div>
+
+    <footer>
+        <p class="copyright light">Micole Lai &copy; 2024</p>
+    </footer>
+
+</body>
+
+</html>
