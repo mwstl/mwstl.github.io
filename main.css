@@ -223,6 +223,11 @@ section:has(+ section) {
 .social-links {
   display: flex;
 }
+.social-links li a img {
+  min-height: var(--size-med);
+  max-height: 42px;
+  color: #b8b8b8;
+}
 
 /* ----------------------
 
@@ -440,9 +445,8 @@ section:has(+ section) {
 
 .project-image {
   display: grid;
-  grid-template-rows: auto;
+  grid-template-rows: auto auto;
   grid-auto-rows: 50%;
-  grid-auto-flow: column;
   border-radius: var(--size-sm);
   overflow: hidden;
   border-top: 2px solid #5a8676;
@@ -570,6 +574,16 @@ section:has(+ section) {
     color: var(--main);
   }
 
+  #about {
+    position: relative;
+    z-index: 2;
+    background-image: linear-gradient(
+      to bottom,
+      rgba(19, 19, 19, 1) 90%,
+      rgba(19, 19, 19, 0.075)
+    );
+  }
+
   #projects {
     width: 80vw;
     max-width: 1440;
@@ -651,7 +665,7 @@ section:has(+ section) {
   }
 
   .gallery-page {
-    width: 70vw;
+    width: 80vw;
     max-width: 1440;
     margin: 0 var(--size-med);
     margin-left: auto;
