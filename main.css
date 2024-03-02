@@ -223,7 +223,8 @@ section:has(+ section) {
 .social-links {
   display: flex;
 }
-.social-links li a img {
+.social-links li a img,
+.project-nav a img {
   min-height: var(--size-med);
   max-height: 42px;
   color: #b8b8b8;
@@ -708,6 +709,7 @@ section:has(+ section) {
     display: flex;
     justify-content: space-between;
     width: 100%;
+    padding: var(--size-smed);
   }
   .project-nav a {
     display: flex;
