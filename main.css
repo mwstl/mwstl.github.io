@@ -523,6 +523,10 @@ section:has(+ section) {
   
 ---------------------- */
 
+.chara-anim {
+  display: none;
+}
+
 .project-three-img {
   display: grid;
   grid-template-columns: auto auto auto;
@@ -534,6 +538,18 @@ section:has(+ section) {
     max-width: 1920px;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  .character {
+    z-index: 3;
+    position: absolute;
+    left: var(--size-med);
+    top: var(--size-med);
+    width: 5vw;
+    height: 110vh;
+  }
+  .chara-anim {
+    display: block;
   }
 
   .index-page #menubar,
@@ -638,11 +654,38 @@ section:has(+ section) {
   .projects-left > .project-item:nth-child(3) > a > .project-img {
     height: 30vh;
   }
+  .projects-left > .project-item:nth-child(4) > a > .project-img {
+    height: auto;
+  }
+  .projects-left > .project-item:nth-child(5) > a > .project-img {
+    height: 25vh;
+  }
+  .projects-left > .project-item:nth-child(6) > a > .project-img {
+    height: 30vh;
+  }
+  .projects-left > .project-item:nth-child(7) > a > .project-img {
+    height: auto;
+  }
   .projects-right > .project-item:nth-child(1) > a > .project-img {
     height: 45vh;
   }
   .projects-right > .project-item:nth-child(2) > a > .project-img {
     height: 35vh;
+  }
+  .projects-right > .project-item:nth-child(3) > a > .project-img {
+    height: auto;
+  }
+  .projects-right > .project-item:nth-child(4) > a > .project-img {
+    height: 30vh;
+  }
+  .projects-right > .project-item:nth-child(5) > a > .project-img {
+    height: auto;
+  }
+  .projects-right > .project-item:nth-child(6) > a > .project-img {
+    height: 30vh;
+  }
+  .projects-right > .project-item:nth-child(7) > a > .project-img {
+    height: 30vh;
   }
 
   .archive-page #projects {
