@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Language Diversity | Micole Lai</title>
+    <link rel="stylesheet" href="../main.css">
+    <script src="https://kit.fontawesome.com/d035d37c08.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script defer src="../app.js"></script>
+</head>
+
+<body class="project-page">
+
+    <section id="menubar">
+        <div class="fixedbar">
+            <a href="../index.html" class="logotype">Micole Lai</a>
+            <a href="javascript:void(0);" class="menu-icon" onclick="toggleMenu()"><i class="fa-solid fa-bars"></i></a>
+        </div>
+
+        <nav id="menu-links">
+            <ul>
+                <li><a href="../index.html">About</a></li>
+                <li><a href="../index.html#projects">Projects</a></li>
+                <li><a href="archive.html">Archive</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+            </ul>
+        </nav>
+    </section>
+
+    <section id="project-intro">
+        <p>
+            Spring Semester 2023
+            <br />
+            Group final project
+        </p>
+        <div class="project-image">
+            <h2>Canada's Language Diversity Visualised</h2>
+            <div class="project-image-wrap">
+                <div class="project-image-gradient"></div>
+                <img src="../assets/img/data-viz/population-language.jpg" alt="">
+            </div>
+        </div>
+
+        <div class="intro-text">
+            <div class="overview">
+                <h4>Overview</h4>
+                <p>
+                    An tool for investigating language distribution across Canada's multicultural society and how
+                    immigration patterns affect a region's characteristics.
+                </p>
+            </div>
+
+            <div class="role">
+                <h4>Role</h4>
+                <p>
+                    Project planning and writing, data cleaning, visualisation code
+                </p>
+            </div>
+
+            <div class="skills">
+                <h4>Skills</h4>
+                <p>
+                    Javascript, Python
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <section id="project-details">
+        <div class="details-section">
+            <h3>Project Background</h3>
+            <p>
+                Our requirements for this project were to create a series of linked visualisations to enable someone to
+                explore and answer an analytical problem. Our project would thus enable a person to explore, gain
+                insight, and find patterns through using the visualisation tools.
+            </p>
+            <p>
+                My partner and I chose to explore language diversity in Canada and how it is impacted by immigration. To
+                do this, we used data from the 2011-2021 Canadian Census. As the Census contains a lot of data, part of
+                the process required us to think of what data was necessary for our potential users to have.
+            </p>
+            <p>
+                First and foremost, I focused on language (categories, mother tongue, official and non-official),
+                population (change), place of birth, and ethnicity. I was initially looking into using data from the
+                muncipal level, but eventually switched to the provincial level to gain a more holistic overview of the
+                country. To make this data easier to handle, I used Python to
+                clean and aggregate the relevant variables into a single CSV file, and Javascript to sort them into
+                arrays.
+            </p>
+            <img src="../assets/img/data-viz/data.jpg" alt="">
+        </div>
+
+        <div class="details-section">
+            <h3>Creating the Visualisations</h3>
+            <p>
+                I chose a map as the first visualisation because it gives a brief but easily understandable overview of
+                the data across Canada. The JSON data used in this map was retrieved from OpenStreetMap.
+            </p>
+            <img src="../assets/img/data-viz/map.jpg" alt="">
+            <p>
+                I also utilised line graphs to see how the population has been changing over time. Users can click on
+                the different provinces to see a breakdown of the language in the chosen province, and also compare
+                multiple provinces.
+            </p>
+            <img src="../assets/img/data-viz/population-language.jpg" alt="">
+            <p>
+                Finally, to understand language and ethnicity, I added some bar charts to compare the number people who
+                speak a certain language and the number of people who are from different ethnic backgrounds.
+            </p>
+            <img src="../assets/img/data-viz/language-ethnicity.jpg" alt="">
+        </div>
+
+        <div class="details-section">
+            <h3>Results</h3>
+            <div class="cta-wrapper">
+                <a href="https://observablehq.com/d/60a40aa4c450351f" class="cta medium">Explore the tool</a>
+            </div>
+            <div class="video-player">
+                <iframe width="100%" height="400" src="https://www.youtube.com/embed/v0VAg2b2q2s?si=4NqDhRxSpeipJgdB"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                    allowfullscreen=""></iframe>
+            </div>
+            <p>
+                There was a lot to consider working on this project, both what types of data are relevant, and what
+                types of visualisations would best suit our potential users and their goals. It was interesting getting
+                feedback from our teaching staff and seeing the different ways people would use the tools and whether it
+                would work in a real use case. Some of the
+                ways I thought the visualisations would work end up being more descriptive in a different form, so it
+                was cool seeing the difference between what I wanted to do vs what was needed or best suited for the
+                tasks.
+            </p>
+        </div>
+    </section>
+
+    <div class="project-nav">
+        <a href="bossware.html"><img src="../assets/social-icon/arrow-left-solid.svg">Previous project</a>
+        <a href="cy-fi.html">Next project<img src="../assets/social-icon/arrow-right-solid.svg"></a>
+    </div>
+
+    <footer>
+        <p class="copyright light">Micole Lai &copy; 2024</p>
+    </footer>
+
+</body>
+
+</html>

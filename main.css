@@ -658,12 +658,15 @@ section:has(+ section) {
     height: auto;
   }
   .projects-left > .project-item:nth-child(5) > a > .project-img {
-    height: 25vh;
+    height: auto;
   }
   .projects-left > .project-item:nth-child(6) > a > .project-img {
-    height: 30vh;
+    height: 25vh;
   }
   .projects-left > .project-item:nth-child(7) > a > .project-img {
+    height: 30vh;
+  }
+  .projects-left > .project-item:nth-child(8) > a > .project-img {
     height: auto;
   }
   .projects-right > .project-item:nth-child(1) > a > .project-img {
